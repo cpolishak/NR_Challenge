@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Coding Assessment for NR",
   "main": "counting-sequences.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha 'counting-sequences.test.js' --exit"
   },
   "repository": {
     "type": "git",

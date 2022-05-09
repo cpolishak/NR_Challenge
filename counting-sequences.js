@@ -1,27 +1,28 @@
-const fs = require('fs');
+import fs from 'fs';
 /* Set file to test by changing file path of txtPath const below */
 const txtPath = './tests/sample1.txt';
 
-/* readfile to make string of .txt file (needs to be modified later to set whichever path user chooses) */
-const readWords = fs.readFile(`${txtPath}`, 'utf-8', (err, data) => {
-    /* if error in reading file, report it. Otherwise continue. */
+/* Readfile to make string of .txt file (needs to be modified later to set whichever path user chooses) */
+const countSequences = fs.readFile(`${txtPath}`, 'utf-8', (err, data) => {
+    /* If error in reading file, report it. Otherwise continue. */
     if(err) {
         logger.error('error: ', err);
         throw err;
     } 
 
 
-    /* make file into string and all lowercase letters and remove returns/newlines */
-    /* NOT WORKING YET - figure out how to filter out non-alphabet characters and special characters */
+    /* Make file into string and all lowercase letters and remove returns/newlines */
+    /* Need to figure out regex to filter out non-alphabet characters and special characters */
     let txtString = data.toString().toLowerCase().replace(/(\r\n)/gm, " ");
-    // txtString = txtString.replace(/'([^']*)'/g, "");
+    // txtString = txtString.replace(/[^a-z0-9]+/g, "");
     // console.log(txtString);
 
 
-    /* convert string of txt file to words */
+    /* Convert string of txt file to words */
     let words = txtString.split(/\b/);
     words = words.filter(entry => entry.trim() != '');
     // console.log(words);
+
 
     /* Find counts of words (not sequences) in the file */
     const wordCounts = {};
@@ -48,22 +49,24 @@ const readWords = fs.readFile(`${txtPath}`, 'utf-8', (err, data) => {
         startInd++
         endInd++
     });
-    // set allSubstrings length 2 short of total to only return 3 word sequences
+    /* Set allSubstrings length 2 short of total to only return 3 word sequences */
     allSubstrings.length = allSubstrings.length - 2;
     // console.log(allSubstrings);
 
+
+    /* Find counts of sequences in file */
     const seqCounts = {};
     for(var i = 0; i < allSubstrings.length; i++) {
         // get counts of sequences
         seqCounts["" + allSubstrings[i]] = (seqCounts["" + allSubstrings[i]] || 0) + 1;
+        // need to get it to sort counts most to least
+
+        // need to have only top 100 results returned in seqCounts array
+
     }
     console.log(seqCounts);
     
 });
-readWords;
+countSequences;
 
-
-// TO DO:
-// Figure out how to filter out non-alphabet characters and special characters (!)
-// Break out readWords into smaller separate functions
-// 
+// TO DO: See Readme
