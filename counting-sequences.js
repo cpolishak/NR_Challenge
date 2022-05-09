@@ -1,6 +1,6 @@
 import fs from 'fs';
 /* Set file to test by changing file path of txtPath const below */
-const txtPath = './tests/sample1.txt';
+const txtPath = './texts/sample1.txt';
 
 /* Readfile to make string of .txt file (needs to be modified later to set whichever path user chooses) */
 const countSequences = fs.readFile(`${txtPath}`, 'utf-8', (err, data) => {

@@ -9,9 +9,9 @@ the white whale - 71
 of the whale - 67
 
 
-## How to run this project (after pulling down project and npm install)
+## How to run this project (after pulling down project and doing 'npm install' in terminal)
 1. Open counting-sequences.js file
-2. Change file path in "txtPath" constant set at top of file (sample .txt files in tests directory)
+2. Change file path in constant "txtPath" at top of file (sample .txt files are in the "texts" directory)
 3. Open terminal in the NR_Challenge directory
 4. Enter in terminal 
 ```
