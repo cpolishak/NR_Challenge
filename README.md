@@ -22,13 +22,14 @@ node counting-sequences.js
 ## What could be done next? 
 - Need to get seqCounts object to sort counts highest to lowest.
 - Need to have only top 100 results returned in seqCounts object.
-- Figure out how to filter out special characters, parentheses, singlequotes (and likely more).
+- Modify regex to filter out special characters, parentheses, singlequotes (and likely more).
 - Complete testing in counting-sequences.test.js.
 - Refactor to break out readWords into smaller separate functions: 
     - Refactor to use more es6+ functionality
     - Refactor to improve performance (could be improved by the above)
 - Set up app in Docker.
-- 
+- Make able to process large files and remain performant.
+- Handle unicode characters (eg. the ü in Süsse or ß in Straße).
 
 
 ## Known bugs or issues?
