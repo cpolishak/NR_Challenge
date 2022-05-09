@@ -1,0 +1,26 @@
+{
+  "name": "nr_challenge",
+  "version": "1.0.0",
+  "description": "Coding Assessment for NR",
+  "main": "counting-sequences.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpolishak/NR_Challenge.git"
+  },
+  "keywords": [
+    "sequences"
+  ],
+  "author": "Chris Polishak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpolishak/NR_Challenge/issues"
+  },
+  "homepage": "https://github.com/cpolishak/NR_Challenge#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
